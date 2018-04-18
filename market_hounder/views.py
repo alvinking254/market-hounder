@@ -24,3 +24,12 @@ class MarketsSearch(View):
 def homePage(request):
 	
 	return redirect("markets_search_url")
+
+def marketDetails(request, marketname, market_id):
+	
+	try:
+		address, google_link, schedule, products_list  = mixins.getMarketDetails(market_id)
+		return render(request, 'market_details.html', {'marketname': marketname, 'address':address, 'google_link':google_link, 'schedule':schedule, 'products_list': products_list})	
+	except Exception as exc:
+		return render(request, 'market_details.html', {'errors': True})			
+	

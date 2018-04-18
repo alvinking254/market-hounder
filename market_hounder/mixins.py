@@ -18,3 +18,29 @@ def findMarkets(zip_code):
 
 	except Exception as exc:
 		return 'error'	
+
+
+def getMarketDetails(market_id):
+	'''Provides details for a specific market.'''
+
+	results = requests.get("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market_id)
+	try:
+		results.raise_for_status()
+		details = results.json()
+		marketdetails = details['marketdetails']
+
+		# format market_details for display
+		address = marketdetails.get('Address')
+		google_link = marketdetails.get('GoogleLink')
+		
+		# noticed <br> tags in schedule.. replace with newlines for a better display 
+		schedule = marketdetails.get('Schedule').split('<br>')
+		
+		products_list = marketdetails.get('Products').split(';')
+
+		return (address, google_link, schedule, products_list) 
+
+	except Exception as exc:
+		return 'error'	
+	
+

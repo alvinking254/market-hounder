@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+
+{%block title%} {{marketname}} Details {%endblock%}
+
+{%block header%}
+	<p class="search_link"> <a class="btn" href="{%url 'markets_search_url'%}">Market Search</a></p>
+{%endblock%}
+
+{%block main%} 
+
+{%if errors %} 
+	
+	<h1 class="main_header"> There Was An Error</h1>
+
+{%else%}
+	<h1 class="main_header"> Details for {{marketname}} Market </h1>
+
+	<h3>Market Address </h3> 
+	<p>{{address}}</p>
+
+	<h3> Google Link </h3>
+	<p><a href="{{google_link}}"> click to view map</a></p>
+
+	<h3> Market Schedule </h3>
+	{%for item in schedule%} 
+		<p>{{item}}</p>
+	{%endfor%}
+
+	<h3> Market Products </h3>
+	{%for product in products_list%} 
+		<ul>
+			<li>{{product}}</li>
+		</ul>
+	{%endfor%}
+
+{%endif%}
+
+{%endblock%}

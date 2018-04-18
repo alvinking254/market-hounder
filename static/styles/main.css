@@ -29,6 +29,11 @@ main{
 	margin-top: 60px;
 }
 
+h3{
+	color:#00D054; 
+	text-decoration: underline;
+}
+
 .main_header{
 	margin-bottom: 40px;
 }

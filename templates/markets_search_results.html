@@ -31,7 +31,7 @@
 				
 				{% for result in markets_list %}
 				<tr>
-					<td><a href="#" class="table_link">{{result.marketname}}</a></td>
+					<td><a href="{%url 'market_details_url' marketname=result.marketname market_id=result.id%}" class="table_link">{{result.marketname}}</a></td>
 					<td>{{result.id}}</td>	
 				</tr>		
 			{%endfor%}
