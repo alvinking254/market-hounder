@@ -6,4 +6,14 @@
 
 <h1> Search For Markets </h1>
 
+<form method="post" action=".">
+	{%csrf_token%}
+
+	<label for="zip">Enter Zip Code </label>
+	<input type="text" name="zip" id="zip">
+
+	<button type="submit">Search</button>
+	
+</form>
+
 {%endblock%}

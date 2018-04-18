@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+
+{%block title%}markets search results{%endblock%}
+
+{%block main%} 
+
+{%if errors%} 
+
+	<h1> There was an error. Check your connection </h1>
+	<p><a href="{%url 'markets_search_url'%}">search for markets</a></p>
+
+<!-- check if zip code provided is available -->
+{%elif markets_list.0.id == 'Error' %}
+	<h1> There was an error. Please provide a valid zip code</h1>
+	<p><a href="{%url 'markets_search_url'%}">search for markets</a></p>
+
+{%else%}
+	<h1> Farmer Markets in zip code: {{zip_code}}</h1>
+	<p>
+		<table>
+			<tr> 	
+				<th> Market Name </th>
+				<th> Market ID </th>
+			</tr>
+				
+				{% for result in markets_list %}
+			<tr>
+				<td>{{result.marketname}}</td>
+				<td>{{result.id}}</td>
+			</tr>		
+			{%endfor%}
+		</table>
+	</p>
+
+{%endif%}
+
+{%endblock%}
