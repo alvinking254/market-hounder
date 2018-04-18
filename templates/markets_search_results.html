@@ -2,6 +2,12 @@
 
 {%block title%}markets search results{%endblock%}
 
+
+{%block header%}
+	<p class="search_link"> <a class="btn" href="{%url 'markets_search_url'%}">Market Search</a></p>
+{%endblock%}
+
+
 {%block main%} 
 
 {%if errors%} 
@@ -15,19 +21,19 @@
 	<p><a href="{%url 'markets_search_url'%}">search for markets</a></p>
 
 {%else%}
-	<h1> Farmer Markets in zip code: {{zip_code}}</h1>
+	<h1 class="main_header"> Farmer Markets in zip code: {{zip_code}}</h1>
 	<p>
-		<table>
+		<table class="table table-hover">
 			<tr> 	
 				<th> Market Name </th>
 				<th> Market ID </th>
 			</tr>
 				
 				{% for result in markets_list %}
-			<tr>
-				<td>{{result.marketname}}</td>
-				<td>{{result.id}}</td>
-			</tr>		
+				<tr>
+					<td><a href="#" class="table_link">{{result.marketname}}</a></td>
+					<td>{{result.id}}</td>	
+				</tr>		
 			{%endfor%}
 		</table>
 	</p>

@@ -4,15 +4,17 @@
 
 {%block main%} 
 
-<h1> Search For Markets </h1>
+<h1 class="main_header"> Search for Farmer Markets </h1>
 
 <form method="post" action=".">
 	{%csrf_token%}
+	
+	<div class="form-group">
+		<label for="zip"> Area Zip Code </label>
+		<input type="text" name="zip" id="zip" class="form-control" placeholder="Enter zip code">
 
-	<label for="zip">Enter Zip Code </label>
-	<input type="text" name="zip" id="zip">
-
-	<button type="submit">Search</button>
+		<button type="submit" class="btn btn-success">Search</button>
+	</div>
 	
 </form>
 

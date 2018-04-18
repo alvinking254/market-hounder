@@ -1,0 +1,47 @@
+
+header{
+	position: relative;
+	height: 70px;
+	background-color: #35373A;
+	color: #00D054;
+	text-align: center;
+}
+
+.app_name{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.search_link{
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.search_link a{
+	color: #fff;
+	background-color: #00D054;
+}
+
+main{
+	margin-top: 60px;
+}
+
+.main_header{
+	margin-bottom: 40px;
+}
+
+.form-control{
+	width: 400px;
+	margin-bottom: 20px;
+}
+
+.table_link{
+	color: #212529;
+}
+
+.table_link:hover{
+	color: #007bff;
+}
