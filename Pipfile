@@ -13,6 +13,7 @@ name = "pypi"
 
 django = "*"
 requests = "*"
+gunicorn = "*"
 
 
 [requires]
