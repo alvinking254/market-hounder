@@ -20,6 +20,5 @@ from market_hounder import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('markethounder/', include('market_hounder.urls')),
-    path('', views.homePage, name="home_url"),
+    path('', include('market_hounder.urls')),
 ]
